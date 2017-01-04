@@ -1,5 +1,7 @@
 # lisp-miniweb
 [If you have any problems with the following let me know and I will fix it.]
+
+The mission was to create something in Common Lisp that would (a) run standalone, (b) respond to an http GET with a bit of text, and (c) set a response header slot or two, for the purposes of a language comparison/benchmark.
 ### Running the prebuilt Mac OS X binary
 In the top-level directory of this repo, on Mac OS X\*: `./mini-web` Then at the "?" Lisp prompt either `(mini-web 8080)` or some other port or just `go` if you are OK with port 8080.
 > \* This is a Mac OS X project, but should port easily to other platforms. The ease with which you will be able to build a standalone application will vary. Note that even the included binary just brings up a Lisp session. I built a truly standalone version that started the web server, but then it exited to the OS immediately. WIP.

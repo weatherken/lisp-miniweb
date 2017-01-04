@@ -42,12 +42,12 @@
    content))
 
 (defun mini-go (&optional (port 8080))
+  (print :starting-server)
   (tbnl:start
    (make-instance 'tbnl:easy-acceptor :port port))
-  (format t "~&Now serving port ~d.~%~%Enter (quit) to exit.")
+  (print (format nil "Server started on port ~d.~%~%Enter (quit) to exit." port))
+ 
   (values))
-
-(format t "~%~%~%Enter (mini-go) or simply go at the prompt and press ENTER. ~%~%~%")
 
 (define-symbol-macro go (mini-go))
 

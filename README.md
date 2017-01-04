@@ -7,7 +7,7 @@ In the top-level directory of this repo, on Mac OS X\*: `./mini-web` Then at the
 ### Prerequisites for development
  * The Emacs set-up of your choice. I happen to be using Spacemacs.
  * SLIME, to run/test Lisp under Emacs. This is CL's CIDER. I think I installed from within Emacs: `M-x package-install RET slime RET`
- * A Common Lisp environment. Many use SBCL, I happen to be using ClozureCL. Allegro CL is commercial but the best, and there are also LispWorks, Armed Bear CL (a Java-based CL), CLisp and ECL (translates to C for compilation, IIUC). Maybe more.
+ * A Common Lisp environment. Many use SBCL, I happen to be using ClozureCL because it comes with multi-processing off the shelf (unlike SBCL). Allegro CL is commercial but the best, and there are also LispWorks, Armed Bear CL (a Java-based CL), CLisp and ECL (translates to C for compilation, IIUC). Maybe more.
  * Once your Lisp is in place, install QuickLisp, your future source for O/S libraries: https://www.quicklisp.org/beta/
  
  And now some relevant lines from `.emacs.d/init.el` (the line setting the location of your chosen Lisp binary will have to be adjusted):

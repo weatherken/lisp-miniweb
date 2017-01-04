@@ -25,7 +25,7 @@
 
    Note that specifying mini-go as the toplevel-function to save-app
    produces an executable that starts the server and then exits, bringing
-   the server down with it.
+   the server down with it. Not good. WIP.
 
 |#
 
@@ -33,18 +33,18 @@
   #|
   following code shows setters being used
   to alter the header of the reply instance,
-  which by the by is bound to special variable tbnl::*reply*
+  which FYI is bound to special variable tbnl::*reply*
   |#
 
  (setf (tbnl:content-type*) "text/plain")
- (let ((content (format nil "hi mom")))
+ (let ((content (format nil "~&~%hi mom!~%~%")))
    (setf (tbnl:content-length*) (length content))
    content))
 
 (defun mini-go (&optional (port 8080))
   (tbnl:start
    (make-instance 'tbnl:easy-acceptor :port port))
-  (print '(:now-serving port))
+  (format t "~&Now serving port ~d.~%~%Enter (quit) to exit.")
   (values))
 
 (format t "~%~%~%Enter (mini-go) or simply go at the prompt and press ENTER. ~%~%~%")
